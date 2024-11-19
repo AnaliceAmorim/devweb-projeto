@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffe881;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #fed940;
+}
+
+ul {
+    list-style: none;
+}
+
+#logo {
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#cart-nav {
+    font-size: 40px;
+    background-color: #6f4050;
+    align-items: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#cart-nav:hover {
+    color: #fed940;
+}
+
+nav {
+    background-color: #6f4050;
+    height: 85px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navitens {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+#crepe-container {
+    height: 400px;
+    width: 400px;
+}
+
+#benedetto {
+    font-size: 70px;
+    color: white;
+    text-shadow: 0px 0px 5px #6f4050;
+
+}
+
+#acaicrepe {
+    font-size: 60px;
+    color: #6f4050;
+    text-shadow: 0px 0px 5px white;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: #fed940;
+    width: 97vw;
+    height: 82vh;
+    align-self: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0px rgb(153, 153, 153);
+    align-content: center;
+}
+
+.container-conteudo {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 100px;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #fed940;
+    margin-top: 12px;
+    border-radius: 20px;
+    width: 97vw;
+    align-self: center;
+    box-shadow: 0 0 10px 0px rgb(153, 153, 153);
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.menu-title {
+    font-size: 30px;
+    color: #6f4050;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 3px white;
+}
+
+.crepes-container,
+.acai-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: calc(50% - 20px);
+    margin: 0 10px;
+    box-sizing: border-box;
+}
+
+.crepe,
+.acais {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffe881;
+    box-shadow: 0 0 10px 0px rgb(153, 153, 153);
+    height: 20vh;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.crepe-nome {
+    font-size: 24px;
+    margin: 8px;
+    color: #6f4050;
+}
+
+.preco {
+    font-size: 18px;
+    align-self: flex-end;
+    margin-right: 5px;
+    color: #6f4050;
+}
+
+.cart-button {
+    background-color: #6f4050;
+    margin-right: 5px;
+    align-items: center;
+    color: #fed940;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 6px 8px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.cart-button:hover {
+    color: white;
+}
+
+.img-final {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#acai-img,
+#crepe-img {
+    height: 275px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #6f4050;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 10px;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer-container {
+    margin: 5px 0;
+}
+
+.descricao {
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 0px 0px 3px #6f4050;
+}
+
+/*CSS MODAL*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #6f4050;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffe881;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 900px;
+    height: 500px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 18px;
+    font-size: 20px;
+}
+
+input,
+select {
+    padding: 8px;
+    width: 70%;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-continuar {
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #6f4050;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*CSS CARRINHO*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #ffe881;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar.show {
+    right: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #6f4050;
+    color: white;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.cart-items {
+    color: #6f4050;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0 10px;
+    margin-bottom: 60px;
+}
+
+.cart-items li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #6f4050;
+}
+
+.contador span {
+    margin: 4px;
+}
+
+.contador i {
+    font-size: 14px;
+    background-color: #6f4050;
+    color: white;
+    border: none;
+    padding: 2px;
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+#total {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffe881;
+    text-align: center;
+    font-size: 20px;
+    color: #6f4050;
+    border-top: 1px solid #6f4050;
+}
+
+#realizar-btn {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #6f4050;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#realizar-btn:hover {
+    background-color: #5c3641;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .modal-content {
+        width: 95%;
+        /* 95% da largura da tela */
+        padding: 15px;
+        max-width: 95%;
+        /* Limitar a largura máxima */
+    }
+
+    .modal .form input,
+    .modal .form select {
+        width: 100%;
+        /* Garantir que os inputs fiquem com 100% da largura em telas menores */
+    }
+
+    .btn-continuar {
+        width: 50%;
+        /* Botão ocupando toda a largura em telas pequenas */
+        padding: 12px;
+        margin-top: 10px;
+    }
+
+    #logo {
+        font-size: 22px;
+    }
+
+    #cart-nav {
+        font-size: 30px;
+    }
+
+    nav {
+        flex-direction: row;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navitens {
+        flex-direction: row;
+        gap: 20px;
+        font-size: 18px;
+    }
+
+    #benedetto {
+        font-size: 50px;
+    }
+
+    #acaicrepe {
+        font-size: 40px;
+    }
+
+    .container {
+        width: 95vw;
+        height: auto;
+        margin: 10px;
+    }
+
+    .container-conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #crepe-container {
+        width: 70%;
+        height: auto;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .menu-title {
+        margin-top: 20px;
+    }
+
+    .crepes-container,
+    .acai-container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .img-final {
+        justify-content: space-around;
+    }
+
+    @media (max-width: 480px) {
+        .modal {
+            height: auto;
+        }
+
+        .modal-content {
+            width: 100%;
+            /* Modal ocupa toda a largura da tela em dispositivos muito pequenos */
+            height: auto;
+            /* Ajuste para que a altura do modal se adapte ao conteúdo */
+            padding: 10px;
+        }
+
+        .modal .form input,
+        .modal .form select {
+            width: 100%;
+            /* Os campos de formulário ocupam 100% da largura */
+        }
+
+        .btn-continuar {
+            width: 100%;
+            /* O botão ocupa toda a largura em telas bem pequenas */
+            padding: 10px;
+        }
+
+        .container {
+            padding: 50px;
+        }
+
+        #logo {
+            font-size: 18px;
+        }
+
+        #cart-nav {
+            font-size: 24px;
+        }
+
+        .navitens {
+            display: none;
+        }
+
+        .crepe,
+        .acais {
+            height: auto;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .crepe-nome {
+            font-size: 20px;
+            margin: 5px;
+        }
+
+        .preco {
+            font-size: 16px;
+        }
+
+        .menu-title {
+            font-size: 24px;
+        }
+
+        #acai-img {
+            display: none;
+        }
+
+        .img-final {
+            align-self: center;
+        }
+    }
+}
